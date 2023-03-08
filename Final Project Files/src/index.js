@@ -37,13 +37,14 @@ function search(event) {
   changeCity.textContent = `${searchInput.value}`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=imperial`;
   searchInput.value = "";
-  axios
-    .get(apiUrl)
-    .then(changeTemp)
-    .then(changeDescription)
-    .then(changeHumidity)
-    .then(changeFeelsLike)
-    .then(changeWind);
+  axios.get(apiUrl).then((response) => {
+    changeDescription(response);
+    changeHumidity(response);
+
+    changeFeelsLike(response);
+    changeWind(response);
+    changeTemp(response);
+  });
 }
 
 let form = document.querySelector("form");
