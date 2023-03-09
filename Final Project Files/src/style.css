@@ -56,6 +56,13 @@ h3 {
   text-shadow: 2px 5px 5px lightgrey;
 }
 
+#description {
+  position: relative;
+  top: 85px;
+  left: 20px;
+  color: white;
+}
+
 .small-numbers {
   font-size: 15px;
   position: relative;
